@@ -23,10 +23,10 @@ public interface Shape {
     /**
      * Draws lines to file.
      */
-    default void draw(Writer writer, Line[] lines) {
+    default void draw(Writer writer, Line[] lines) { // => Shape shape
         try {
             for (Line line : lines) {
-                // TODO: what is the purpose of the code there?
+                // TODO: what is the purpose of the code there? // PROBLEM: excessive instance of => boolean parameter?
                 if (writer instanceof JPEGWriter) {
                     writer.write(line.toJPEG());
                 } else if (writer instanceof PNGWriter) {
